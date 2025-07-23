@@ -205,3 +205,27 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Jupyter
+.ipynb_checkpoints/
+.env
+.venv
+venv/
+.envrc
+*.env
+
+# System
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+docker-compose.override.yml
+.tritonserver/
+
+# Triton model repo cache (if ever added)
+models/**/1/
+
+# VSCode or other editor configs
+.vscode/
+.idea/
