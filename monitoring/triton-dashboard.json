@@ -1,0 +1,64 @@
+{
+    "id": null,
+    "title": "Triton Inference Overview",
+    "timezone": "browser",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "Total Inference Requests",
+        "targets": [
+          {
+            "expr": "sum(nv_inference_count)",
+            "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 0, "w": 6, "h": 4 }
+      },
+      {
+        "type": "stat",
+        "title": "Successful Requests",
+        "targets": [
+          {
+            "expr": "sum(nv_inference_request_success)",
+            "refId": "B"
+          }
+        ],
+        "gridPos": { "x": 6, "y": 0, "w": 6, "h": 4 }
+      },
+      {
+        "type": "graph",
+        "title": "Inference Latency (us)",
+        "targets": [
+          {
+            "expr": "rate(nv_inference_request_duration_us_sum[30s]) / rate(nv_inference_request_duration_us_count[30s])",
+            "refId": "C"
+          }
+        ],
+        "yaxes": [
+          {
+            "label": "Microseconds",
+            "format": "µs",
+            "logBase": 1,
+            "min": 0
+          },
+          { "show": false }
+        ],
+        "gridPos": { "x": 0, "y": 4, "w": 12, "h": 8 }
+      },
+      {
+        "type": "stat",
+        "title": "GPU Utilization (%)",
+        "targets": [
+          {
+            "expr": "avg(nvidia_gpu_utilization)",
+            "refId": "D"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 12, "w": 6, "h": 4 }
+      }
+    ],
+    "schemaVersion": 37,
+    "version": 1,
+    "refresh": "5s"
+  }
+  
