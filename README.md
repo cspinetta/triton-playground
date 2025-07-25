@@ -1,5 +1,3 @@
-A production-grade ML inference service using Triton Inference Server, serving ResNet50 with real-time prediction, observability, and a modular architecture ready for deployment or extension.
-
 # Triton Playground
 
 A hands-on playground to explore **Triton Inference Server**, **model serving**, and **ML infrastructure fundamentals** using `ResNet50`, Docker Compose, Prometheus, and Grafana.
